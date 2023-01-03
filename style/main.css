@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    background: rgb(233,64,36);
+    background: linear-gradient(90deg, rgba(233,64,36,0.8080182756696428) 13%, rgba(211,204,75,0.8080182756696428) 53%, rgba(102,174,90,1) 94%);
+}
+.progresss {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    outline: 1px solid rgba(200, 68, 184, 0.711);
+    outline-offset: -1px;
+}
+.value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 22px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+.loading {
+    position: absolute;
+    top: 33%;
+    left:33%;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+
+}
+.progresss::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    outline: 1px solid rgba(200, 68, 184, 0.711);
+}
+.circle {
+    stroke-dasharray: 570;
+    stroke-dashoffset: 570;
+    transform: rotate(-90deg);
+    animation: fill-bar 8s linear forwards; 
+}
+
+@keyframes fill-bar {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
